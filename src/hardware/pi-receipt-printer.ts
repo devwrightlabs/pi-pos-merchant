@@ -191,7 +191,7 @@ export class ReceiptPrinter {
 
       piLog(
         "info",
-        PI_ERROR_CODES.HW_PRINTER_CONNECT_FAILED,
+        PI_ERROR_CODES.HW_INFO,
         `Receipt printer connected: ${this.hardwareDevice.deviceName}`,
         { deviceId: this.device.id }
       );
@@ -237,7 +237,7 @@ export class ReceiptPrinter {
 
       piLog(
         "info",
-        PI_ERROR_CODES.HW_PRINTER_CONNECT_FAILED,
+        PI_ERROR_CODES.HW_INFO,
         `Receipt printed successfully for order ${job.orderId}.`,
         { bytes: payload.length }
       );
@@ -263,7 +263,7 @@ export class ReceiptPrinter {
 
     piLog(
       "info",
-      PI_ERROR_CODES.HW_PRINTER_CONNECT_FAILED,
+      PI_ERROR_CODES.HW_INFO,
       "Receipt printer disconnected."
     );
   }

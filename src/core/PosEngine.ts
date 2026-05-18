@@ -214,7 +214,7 @@ export class PosEngine {
     return new Promise<CheckoutResult>((resolve) => {
       this.sdk!.createPayment(paymentRequest, {
         onReadyForServerApproval: (paymentId: string) => {
-          piLog("info", PI_ERROR_CODES.SDK_NOT_FOUND, `Payment ${paymentId} ready for server approval.`, {
+          piLog("info", PI_ERROR_CODES.PAY_INFO, `Payment ${paymentId} ready for server approval.`, {
             paymentId,
             orderId,
           });
@@ -222,7 +222,7 @@ export class PosEngine {
         },
 
         onReadyForServerCompletion: async (paymentId: string, txid: string) => {
-          piLog("info", PI_ERROR_CODES.SDK_NOT_FOUND, `Payment ${paymentId} complete. txid: ${txid}`, {
+          piLog("info", PI_ERROR_CODES.PAY_INFO, `Payment ${paymentId} complete. txid: ${txid}`, {
             paymentId,
             txid,
             orderId,

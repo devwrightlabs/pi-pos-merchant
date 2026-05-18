@@ -96,7 +96,7 @@ export async function initPiHandshake(
 
   const sdk: PiSdk = window.Pi;
 
-  piLog("info", PI_ERROR_CODES.SDK_NOT_FOUND, "Pi SDK detected. Starting PCT handshake…", {
+  piLog("info", PI_ERROR_CODES.SDK_INFO, "Pi SDK detected. Starting PCT handshake…", {
     sandbox: config.sandbox ?? false,
     scopes,
   });

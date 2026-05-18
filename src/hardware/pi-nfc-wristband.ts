@@ -75,7 +75,7 @@ export function registerWristband(record: WristbandRecord): void {
   wristbandRegistry.set(record.serial, record);
   piLog(
     "info",
-    PI_ERROR_CODES.HW_NFC_UNAVAILABLE,
+    PI_ERROR_CODES.HW_INFO,
     `Wristband registered for employee ${record.employeeName} (${record.role})`,
     { serial: record.serial }
   );
@@ -160,7 +160,7 @@ export class NfcWristbandReader {
       await reader.scan({ signal: this.abortController.signal });
 
       (this.hardwareDevice as { status: string }).status = "connected";
-      piLog("info", PI_ERROR_CODES.HW_NFC_UNAVAILABLE, "NFC wristband reader active and listening.");
+      piLog("info", PI_ERROR_CODES.HW_INFO, "NFC wristband reader active and listening.");
 
       return () => this.stopListening();
     } catch (err: unknown) {
@@ -180,7 +180,7 @@ export class NfcWristbandReader {
     this.abortController?.abort();
     this.abortController = null;
     (this.hardwareDevice as { status: string }).status = "disconnected";
-    piLog("info", PI_ERROR_CODES.HW_NFC_UNAVAILABLE, "NFC wristband reader stopped.");
+    piLog("info", PI_ERROR_CODES.HW_INFO, "NFC wristband reader stopped.");
   }
 
   // -------------------------------------------------------------------------
@@ -214,7 +214,7 @@ export class NfcWristbandReader {
 
     piLog(
       "info",
-      PI_ERROR_CODES.HW_NFC_UNAVAILABLE,
+      PI_ERROR_CODES.HW_INFO,
       `Wristband auth: ${record.employeeName} (${record.role}) — tap confirmed.`,
       { employeeId: record.employeeId, serial }
     );

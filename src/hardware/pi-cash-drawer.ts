@@ -104,7 +104,7 @@ export class CashDrawer {
 
       piLog(
         "info",
-        PI_ERROR_CODES.HW_CASH_DRAWER_FAILED,
+        PI_ERROR_CODES.HW_INFO,
         `Cash drawer connected: ${this.hardwareDevice.deviceName}`
       );
     } catch (err: unknown) {
@@ -136,7 +136,7 @@ export class CashDrawer {
         await this.openViaNetwork(cmd);
       }
 
-      piLog("info", PI_ERROR_CODES.HW_CASH_DRAWER_FAILED, `Cash drawer opened (${pin}).`);
+      piLog("info", PI_ERROR_CODES.HW_INFO, `Cash drawer opened (${pin}).`);
     } catch (err: unknown) {
       const error = err instanceof Error ? err : new Error(String(err));
       handleHardwareFallback("cash-drawer", error);
@@ -180,6 +180,6 @@ export class CashDrawer {
     this.btDevice = null;
     this.btTxChar = null;
     (this.hardwareDevice as { status: string }).status = "disconnected";
-    piLog("info", PI_ERROR_CODES.HW_CASH_DRAWER_FAILED, "Cash drawer disconnected.");
+    piLog("info", PI_ERROR_CODES.HW_INFO, "Cash drawer disconnected.");
   }
 }

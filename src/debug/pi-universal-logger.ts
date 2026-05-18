@@ -17,6 +17,12 @@ import type { PiLogEntry } from "../types/pos.js";
  * Each code maps to a specific actionable hint for the developer.
  */
 export const PI_ERROR_CODES = {
+  // Generic info/status codes (used for non-error informational logging)
+  SDK_INFO: "SDK_INFO",
+  HW_INFO: "HW_INFO",
+  OPS_INFO: "OPS_INFO",
+  PAY_INFO: "PAY_INFO",
+
   // Pi SDK
   SDK_NOT_FOUND: "SDK_NOT_FOUND",
   SDK_AUTH_FAILED: "SDK_AUTH_FAILED",
@@ -62,6 +68,12 @@ export type PiErrorCode = (typeof PI_ERROR_CODES)[keyof typeof PI_ERROR_CODES];
 
 /** Mapping from error codes to developer-friendly hints. */
 const CODE_HINTS: Record<PiErrorCode, string> = {
+  // Generic info codes
+  SDK_INFO: "Pi SDK informational event.",
+  HW_INFO: "Hardware state change or informational event.",
+  OPS_INFO: "Operational event — no action required.",
+  PAY_INFO: "Payment lifecycle informational event.",
+  // Pi SDK errors
   SDK_NOT_FOUND:
     "window.Pi is undefined. Ensure the app is opened inside Pi Browser and <script src='https://sdk.minepi.com/pi-sdk.js'> is loaded.",
   SDK_AUTH_FAILED:

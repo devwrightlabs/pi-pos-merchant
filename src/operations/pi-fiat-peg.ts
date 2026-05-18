@@ -119,7 +119,7 @@ export class FiatPeg {
 
       piLog(
         "info",
-        PI_ERROR_CODES.OPS_FIAT_FETCH_FAILED,
+        PI_ERROR_CODES.OPS_INFO,
         `Fiat rate updated: 1 Pi = ${this.config.symbol}${rate} ${this.config.currency}`,
         { currency: this.config.currency, rate }
       );

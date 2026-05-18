@@ -132,7 +132,7 @@ export async function issueLoyaltyToken(
 
   piLog(
     "info",
-    PI_ERROR_CODES.OPS_LOYALTY_ISSUE_FAILED,
+    PI_ERROR_CODES.OPS_INFO,
     `Issuing ${pointsAwarded} loyalty points to ${recipientUid} for order ${orderId}.`,
     { tokenId, pointsAwarded }
   );
@@ -148,7 +148,7 @@ export async function issueLoyaltyToken(
 
     piLog(
       "info",
-      PI_ERROR_CODES.OPS_LOYALTY_ISSUE_FAILED,
+      PI_ERROR_CODES.OPS_INFO,
       `Loyalty token issued: ${tokenId}${txid ? ` (txid: ${txid})` : ""}.`,
       { tokenId, txid }
     );

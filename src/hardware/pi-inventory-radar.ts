@@ -137,7 +137,7 @@ export class InventoryRadar {
 
     piLog(
       "info",
-      PI_ERROR_CODES.HW_BLE_SCAN_FAILED,
+      PI_ERROR_CODES.HW_INFO,
       `Inventory radar active. Scanning every ${this.config.scanIntervalMs / 1000}s.`,
       { serviceUuid: this.config.targetServiceUuid, rssiThreshold: this.config.rssiThreshold }
     );
@@ -155,7 +155,7 @@ export class InventoryRadar {
     }
     this.seen.clear();
     (this.hardwareDevice as { status: string }).status = "disconnected";
-    piLog("info", PI_ERROR_CODES.HW_BLE_SCAN_FAILED, "Inventory radar stopped.");
+    piLog("info", PI_ERROR_CODES.HW_INFO, "Inventory radar stopped.");
   }
 
   // -------------------------------------------------------------------------
@@ -204,7 +204,7 @@ export class InventoryRadar {
 
       piLog(
         "info",
-        PI_ERROR_CODES.HW_BLE_SCAN_FAILED,
+        PI_ERROR_CODES.HW_INFO,
         `User detected: @${piUsername} at ~${distanceMetres.toFixed(1)}m. Pushing menu.`,
         { userId, rssi }
       );

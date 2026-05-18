@@ -88,7 +88,7 @@ export async function routeTip(
 
   piLog(
     "info",
-    PI_ERROR_CODES.OPS_TIP_ROUTE_FAILED,
+    PI_ERROR_CODES.OPS_INFO,
     `Routing tip of ${tipAmountPi}π to ${destinationWallet.slice(0, 8)}… for order ${orderId}.`,
     { orderId, tipAmountPi }
   );
@@ -111,7 +111,7 @@ export async function routeTip(
 
     piLog(
       "info",
-      PI_ERROR_CODES.OPS_TIP_ROUTE_FAILED,
+      PI_ERROR_CODES.OPS_INFO,
       `Tip routing successful for order ${orderId}.`,
       { orderId, tipAmountPi }
     );

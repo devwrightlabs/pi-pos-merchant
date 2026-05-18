@@ -90,7 +90,7 @@ export async function openShift(
 
   piLog(
     "info",
-    PI_ERROR_CODES.OPS_SHIFT_NOT_OPEN,
+    PI_ERROR_CODES.OPS_INFO,
     `Shift opened: ${shiftId} for employee ${employeeId} (${role}).`,
     { shiftId, employeeId, role }
   );
@@ -131,7 +131,7 @@ export async function closeShift(shiftId: string, rawToken: string): Promise<Shi
 
   piLog(
     "info",
-    PI_ERROR_CODES.OPS_SHIFT_NOT_OPEN,
+    PI_ERROR_CODES.OPS_INFO,
     `Shift ${shiftId} closed by ${shift.openedBy}.`,
     { shiftId, durationMs: closed.closedAt! - shift.openedAt }
   );
