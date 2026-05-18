@@ -1,0 +1,60 @@
+{
+  "name": "@devright/pi-pos-merchant",
+  "version": "1.0.0",
+  "description": "Production-ready TypeScript POS engine for the native Pi Network webview — PCT-compliant, hardware-aware, offline-resilient.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "pi-network",
+    "pos",
+    "point-of-sale",
+    "pi-browser",
+    "typescript",
+    "pct",
+    "webview",
+    "bluetooth",
+    "nfc",
+    "receipt-printer",
+    "offline-sync"
+  ],
+  "author": "Devright Labs <dev@devright.io>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
+  }
+}
